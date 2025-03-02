@@ -1,45 +1,73 @@
-# Image-Classifier-Project
-A deep learning-based image classifier built using PyTorch. This project includes scripts for training a model on image datasets and making predictions on new images.
+This project is a deep learning-based image classifier built using PyTorch. It trains a neural network on an image dataset and makes predictions on new images. The model can be trained on CPU or GPU and supports multiple architectures from torchvision.models.
 
 Features
-✔ Train a model on an image dataset using train.py
-✔ Supports multiple architectures from torchvision.models
-✔ Customize hyperparameters (learning rate, hidden units, epochs)
-✔ Train on GPU or CPU
-✔ Make predictions on new images with predict.py
-✔ Get top-K predictions with associated probabilities
-✔ Load category names from a JSON file for better readability
+  Train a deep learning model on image datasets
+ 
+  Choose from multiple pre-trained architectures (e.g., VGG16)
+ 
+  Customize hyperparameters (learning rate, hidden units, epochs)
+ 
+  Train on GPU or CPU for faster computation
+ 
+  Predict the class of an image with predict.py
+ 
+  Display top-K predictions with confidence scores
+ 
+  Load category names from a JSON file for easy interpretation
+ 
 
-Installation
-Clone this repository:
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/Image-Classifier.git
+Setup & Installation
+
+Clone the repository:
+git clone https://github.com/biohackednidix/Image-Classifier-Project.git
+
 cd Image-Classifier
-Install dependencies:
-bash
-Copy
-Edit
-pip install torch torchvision matplotlib numpy
-Usage
-Training the Model
-bash
-Copy
-Edit
-python train.py --data_dir path/to/data --arch resnet18 --epochs 10 --learning_rate 0.001 --gpu
-Making Predictions
-bash
-Copy
-Edit
-python predict.py --image path/to/image.jpg --checkpoint checkpoint.pth --top_k 5 --gpu
-Checking Model Performance
-To verify if the model is working correctly, the training script prints:
-✅ Training Loss
-✅ Validation Loss
-✅ Validation Accuracy
 
-You can also test predictions using print statements inside predict.py.
+Install dependencies:
+pip install torch torchvision matplotlib numpy
+
+How to Use
+1️ Train the Model
+Use train.py to train the image classifier.
+python train.py --data_dir path/to/data --arch resnet18 --epochs 10 --learning_rate 0.001 --gpu
+
+
+🔹 Arguments:
+
+--data_dir → Path to dataset
+
+--arch → Model architecture (e.g. vgg16)
+
+--epochs → Number of training epochs 
+
+--learning_rate → Learning rate for optimization
+
+--gpu → Train using GPU 
+
+2️ Make Predictions
+
+Use predict.py to classify an image.
+
+python predict.py --image path/to/image.jpg --checkpoint checkpoint.pth --top_k 5 --gpu
+
+🔹 Arguments:
+
+--image → Path to input image
+--checkpoint → Saved model checkpoint
+--top_k → Number of top predictions (default: 5)
+--gpu → Use GPU for prediction (optional)
+
+How to Verify if It Works?
+During training, check the printed logs for:
+
+ Training loss
+ 
+ Validation loss
+ 
+ Validation accuracy
+ 
+For predictions, add print() statements in predict.py to debug output probabilities and class labels.
 
 Contributing
-Feel free to improve this project by submitting a pull request!
+Want to improve this project? Feel free to submit a pull request!
+
