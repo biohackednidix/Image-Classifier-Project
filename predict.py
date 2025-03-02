@@ -58,7 +58,6 @@ if args.category_names:
         cat_to_name = json.load(f)
     classes = [cat_to_name[str(cls)] for cls in classes]
 
-# Print results
 print("Predicted classes and probabilities:")
 for i in range(len(probs)):
     print(f"{classes[i]}: {probs[i]:.3f}")
